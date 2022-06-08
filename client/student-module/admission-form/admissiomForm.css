@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    background-color: bisque;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.input-row{
+    display:grid;
+    grid-template-columns: 100px 300px;
+    grid-gap:20px;
+    margin-bottom: 7px;
+}
+.header {
+    background-color: aquamarine;
+    padding: 10px 20px;
+    border-bottom: 1px solid aqua;
+    box-shadow: 1px 2px 3px #bbb;
+}
+
+h3 { color:purple;}
+.header-grid{
+display:grid;
+grid-template-columns: auto auto;
+justify-content:space-between;
+background-color: aquamarine;
+}
+
+h4{ color:mediumslateblue}
+button {
+    background-color:yellow;
+    cursor: pointer;
+}
+.input-row-dob{
+    display:grid;
+    grid-template-columns: 100px 100px;
+    grid-gap:20px;
+}
+.website-menu {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.menu-item {
+    text-decoration:none;
+    color:blueviolet;
+}
+.menu-item:hover {
+      color:red;
+}
+.logo {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-gap: 20px;
+    align-items: center;
+}
+.scrollable-nottification{
+    background-color: #3b92ac;
+    color:white;
+    padding: 5px 10px;
+}
+.registration-form {
+    width: 500px;
+    border: 1px solid #cdcdcd;
+    padding: 20px;
+    margin: 0px auto 0;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px #bbb;
+    background-color:wheat;
+}
+.student-row{
+    display: grid;
+    grid-template-columns: 40px 170px 70px 90px 280px 120px 150px 150px 150px 150px 100px;
+    border-bottom: 1px solid #cdcdcd;
+
+}
+.student-list-header {
+    background: purple;
+    color: #fff;
+}
+.heading-filter-grid{
+    display:grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}

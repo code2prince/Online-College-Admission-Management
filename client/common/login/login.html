@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="login.css" />
+    
+    <!-- script -->
+    <script src="login.js"></script>
 </head>
 <body>
-    <h2>Login</h2>
-    <script src="login.js"></script>
+    <header class="header">
+        <div class="header-grid">
+            <div class="logo-websitetitle">
+                <img class="logo" src="image/adm logo.jpg" />
+                <h3> Engineering College</h3>
+            </div>
+            <div class="website-menu">
+                <div><a class="menu-link" href="/client/index.html">Home</a></div>
+                <div><a class="menu-link" href="contactus.html">Contact</a></div>
+                <div><a class="menu-link" href="admissionForm.html">Form</a></div>
+                <div><a class="menu-link" href="#">About</a></div>
+                <div> <a class="menu-link" href="register.html">Register</a> </div>
+                <div> <a class="menu-link" href="open.html">Open-Admission</a> </div>
+            </div>
+        </div>
+    </header>
+    <div class="scroll">
+        <marquee>
+           WELCOME TO  ENGINEERING COLLEGE (CHENNAI)  &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; B. Tech 2022 admission open. {ApplyNow}   &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;  M. Tech registration window closed.
+        </marquee>
+    </div>
+    <div class="login-container">
+        <h4>PLEASE LOGIN</h4>
+        <div>
+            <div class="input-grid">
+                <span>UserName: </span>
+                <input id="userid" type="text"> 
+            </div>
+            <div  class="input-grid">
+                <span>Password: </span>
+                <input id="password" type="password"> 
+            </div>
+            <div class="input-grid">
+                <div></div>
+                <div>
+                    <button onclick ="Login()">Login</button>
+                    <a href="forget.html">Forget-Password?</a> 
+                </div>
+              <div></div>
+                  <div>
+                    <button ><a class="btn apply-btn" href="#">Google</a></button>
+                    <button ><a class="btn apply-btn" href="#">Microsoft</a></button>
+                  </div>     
+            </div>
+    </div>   
 </body>
 </html>

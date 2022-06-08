@@ -4,10 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign-up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="signUp.css" />
+    <title>register</title>
+    <script src="signUp.js"></script>
 </head>
 <body>
-    <h2>SignUp</h2>
-    <script src="signUp.js"></script>
+<header class="header">
+    <div class="header-grid">
+        <div class="logo">
+            <img src="/client/image/adm logo.jpg" width=50px; />
+            <h3> Engineering College </h3>
+        </div>
+        <div class="website-menu">
+            <div> <a class="menu-item" href="/client/index.html">Home</a> </div>
+                <div> <a class="menu-item" href="about.html">About</a> </div>
+                <div> <a class="menu-item" href="contactus.html">Contact Us</a> </div>
+                <div> <a class="menu-item" href="/client/common/login/login.html">Login</a> </div>
+                <div> <a class="menu-item" href="admissionForm.html">form</a> </div>
+        </div>
+    </div>
+
+</header>
+<div class="scroll">
+    <marquee>
+        WELCOME TO  ENGINEERING COLLEGE (CHENNAI)  &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;B. Tech 2022 admission open. {ApplyNow}   &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;  M. Tech registration window closed.
+    </marquee>
+</div>
+<div class="register-container">
+    <h4>New User Register Here:</h4>
+    <div>
+        <div class="input-grid">
+            <span>Name: </span>
+            <input id="name" type="text"> 
+        </div>
+        <div class="input-grid">
+            <span>Email:</span>
+            <input id="email" type="text">
+        </div>
+        <div class="input-grid">
+            <span>Mobile no:</span>
+            <input id="mobile" type="text">
+        </div>
+        <div  class="input-grid">
+            <span>Password: </span>
+            <input id="password" type="password"> 
+        </div>
+        <div  class="input-grid">
+            <span>Confirm-Password: </span>
+            <input id="confirm-password" type="password"> 
+        </div>
+        <div class="input-grid">
+            <div></div>
+            <div>
+                <button onclick ="createUser()">Submit</button>
+                <a href="login.html">Login if registered?</a> 
+                </div>
+            </div>
+        </div>
 </body>
 </html>

@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'client')))
 const studentList = [
     {id: 1, name: 'prince'},
     {id: 2, name: 'Rajeev'},
+    {id:3, name:'raj'},
 ];
 
 app.get('/getStudetList', function(request, response){

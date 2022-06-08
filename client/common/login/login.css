@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.header {
+    background-color: #efefef;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 1px 2px 3px #bbb;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    
+}
+.logo-websitetitle {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-gap: 20px;
+    align-items: center;
+}
+.logo {
+    width: 50px;
+}
+
+.website-menu {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #555;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+    color: #0099ff;
+}
+
+.login-container {
+    width: 350px;
+    border: 1px solid #cdcdcd;
+    padding: 20px;
+    margin: 100px auto 0;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #bbb;
+}
+
+.input-grid{
+    display: grid;
+    grid-template-columns: 100px auto;
+    margin-bottom: 15px;
+}
+.scroll{
+        background-color: yellowgreen;
+        color: #ffffff;
+        padding: 5px 10px;
+}
+.btn{
+    color: #212529;
+    background-color: #ffea07;
+    display:grid;
+    grid-template-columns: 100px auto;
+    margin: 2px;
+    text-align: center;
+
+}
