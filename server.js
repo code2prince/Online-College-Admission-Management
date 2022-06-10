@@ -80,6 +80,66 @@ app.delete('/deleteExample', function(request, response){
 });
 
 
+let user=[{
+    username:"prince",
+    password: 12345,
+},
+{
+    username:"raj",
+    password:12345,
+}]
+
+app.get('/getUser', function(request,response){
+    response.send(user);
+})
+
+app.get('/getUser/:user', function(request,response){
+   // response.send(user);
+
+    const abc=request.params.user;
+    const userfind= user.find((x)=> x.username === abc);
+    if(userfind){
+        response.send(userfind);
+    }
+    else{
+        response.send('user not found');
+    }
+})
+
+app.post('/enrollusername', function(request, response){
+   
+    const userid=request.body;
+    user.push(userid);
+    
+    console.log('enroll username list ........... ', user);
+    response.send({data: user });
+});
+
+
+app.put('/putUser',function(request, response){
+    console.log(typeof request.body.username, request.body.password);
+
+    user=user.map(x => {
+        if(x.username === request.body.username){
+            const object={
+                username: x.username,
+                password: request.body.password,
+            }
+            return Object;
+        }
+        return x;
+    })
+    console.log(user);
+    response.send({ message: 'Password updated'});
+});
+
+app.delete('/deleteUser', function(request, response){
+    console.log(typeof request.body.username, request.body.password);
+    user= user.filter(x => x.username !== request.body.username);
+
+    console.log(user);
+    response.send({msg: 'user deleted'});
+});
 
 
 app.listen(3000, function() {
