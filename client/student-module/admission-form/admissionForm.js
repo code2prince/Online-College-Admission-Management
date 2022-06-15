@@ -1,6 +1,5 @@
 //console.log("Details");
-
-var aplicantList = [];
+let aplicantList = [];
 
 function submitForm() {
 
@@ -72,15 +71,18 @@ function submitForm() {
         
         // TODO: create a applicationObject with all the values and push it into an global array applicationArray.
 
-        var aplicantObject ={
+        const aplicantObject ={
             id:aplicantList.length+1,
             name:name,
             gender:selectedGender,
+            yeargap:selectedyeargap,
+            marks:selectedmarks,
             dateofbirth:dateofbirth,
             email:email,
             number:number,
             address:address,
             fathername:fathername,
+            occupation:selectedOccupation,
             mothername:mothername,
             qualification:qualification,
         }

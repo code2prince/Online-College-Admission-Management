@@ -28,7 +28,6 @@ app.get('/getStudetList', function(request, response){
     // resquest > which is coming from client, it contain all the info related to client
     // response > which is sent to client
 
-
     //send data to client
     response.send(studentList);
 });
@@ -119,13 +118,15 @@ app.post('/enrollusername', function(request, response){
 app.put('/putUser',function(request, response){
     console.log(typeof request.body.username, request.body.password);
 
+    //user = user.filter(x => x.username !== request.body.username);
+
     user=user.map(x => {
         if(x.username === request.body.username){
             const object={
                 username: x.username,
                 password: request.body.password,
             }
-            return Object;
+            return object;
         }
         return x;
     })
@@ -141,6 +142,201 @@ app.delete('/deleteUser', function(request, response){
     response.send({msg: 'user deleted'});
 });
 
+app.patch('/patchUser',function(request, response){
+    console.log(typeof request.body.username, request.body.password);
+
+    //user = user.filter(x => x.username !== request.body.username);
+
+    user=user.map(x => {
+        if(x.username === request.body.username){
+            const object={
+                username: x.username,
+                password: request.body.password,
+            }
+            return object;
+        }
+        return x;
+    })
+    console.log(user);
+    response.send({ message: 'Password updated'});
+});
+
+
+let enrollStudentForm=[{
+    
+    address: "Chennai",
+    dateofbirth: "2001-06-15",
+    email: "sharma365@gmail.com",
+    fathername: "Amit",
+    gender: "male",
+    id: 1,
+    marks: "below 60",
+    mothername: "Sita",
+    name: "Amol",
+    number: "8888888888",
+    occupation: "Bussiness",
+    qualification: "GRADUATION",
+    yeargap: "yes",
+},
+{
+    address: "Chennai",
+    dateofbirth: "2001-03-18",
+    email: "princekumarsharma365@gmail.com",
+    fathername: "Manoj Sharma",
+    gender: "male",
+    id: 2,
+    marks: "above 60",
+    mothername: "Asha Devi",
+    name: "Prince Sharma",
+    number: "8873091666",
+    occupation: "Bussiness",
+    qualification: "12th(HSC/INTERMEDIATE)",
+    yeargap: "no",
+},
+{
+    address: "Patna",
+    dateofbirth: "2001-03-08",
+    email: "rishiraj@gmail.com",
+    fathername: "Ram Yadav",
+    gender: "male",
+    id: 3,
+    marks: "above 60",
+    mothername: "Sita ",
+    name: "Rishi raj",
+    number: "6254075962",
+    occupation: "farmer",
+    qualification: "Graduation",
+    yeargap: "no",
+},
+{
+    address: "Muzzafarpur",
+    dateofbirth: "2001-03-15",
+    email: "rshinha20320@gmail.com",
+    fathername: "Amit Rai",
+    gender: "male",
+    id: 4,
+    marks: "above 60",
+    mothername: " Saraswati Devi",
+    name: "Raushan",
+    number: "9135045962",
+    occupation: "farmer",
+    qualification: "Graduation",
+    yeargap: "yes",
+},
+{
+    address: "Ranchi",
+    dateofbirth: "2001-03-07",
+    email: "saroj123@gmail.com",
+    fathername: "Ramesh Mandal",
+    gender: "male",
+    id: 5,
+    marks: "above 60",
+    mothername: "Ankita Mandal",
+    name: "Saroj Mandal",
+    number: "9898987596",
+    occupation: "Bussiness",
+    qualification: "12th(HSC/INTERMEDIATE)",
+    yeargap: "yes",
+},
+{
+    address: "Gujrat",
+    dateofbirth: "1999-09-08",
+    email: "rksharma123@gmail.com",
+    fathername: "Rajesh Sharma",
+    gender: "male",
+    id: 6,
+    marks: "below 60",
+    mothername: "Kushum Devi",
+    name: "Rahul Sharma",
+    number: "7942253655",
+    occupation: "Service",
+    qualification: "GRADUATION",
+    yeargap: "yes",
+},
+{
+    address: "Raipur",
+    dateofbirth: "2000-07-06",
+    email: "anujkumar888@gmail.com",
+    fathername: "Anil Sharma",
+    gender: "male",
+    id: 7,
+    marks: "below 60",
+    mothername: "Mira Devi",
+    name: "Anuj Sharma",
+    number: "9644425365",
+    occupation: "Service",
+    qualification: "GRADUATION",
+    yeargap: "no",
+},
+{
+    address: "Siwan",
+    dateofbirth: "2000-01-14",
+    email: "anujkumar888@gmail.com",
+    fathername: "Manoj sharma",
+    gender: "female",
+    id: 8,
+    marks: "below 60",
+    mothername: "Asha Devi",
+    name: "Shruti Sharma",
+    number: "6200975252",
+    occupation: "Bussiness",
+    qualification: "GRADUATION",
+    yeargap: "no",
+},
+{
+    address: "Ranchi",
+    dateofbirth: "2001-05-09",
+    email: "anchalsharma567@gmail.com",
+    fathername: "Upendra Sharma",
+    gender: "female",
+    id: 9,
+    marks: "below 60",
+    mothername: "Nilu Sharma",
+    name: "Anchal Sharma",
+    number: "8748854522",
+    occupation: "Bussiness",
+    qualification: "GRADUATION",
+    yeargap: "no",
+},
+{
+    address: "Bhilai",
+    dateofname: "Anil Sharma",
+    gender: "female",
+    id: 10,
+    marks: "below 60",
+    mothername: "Mira Sharma",
+    name: "Jyoti Sharma",
+    number: "9987854125",
+    occupation: "Bussiness",
+    qualification: "Post-Graduation",
+    yeargap: "no",
+}
+]
+
+app.get('/getEntroll', function (request,response){
+    response.send(enrollStudentForm);
+})
+app.get('/getEnroll/:enrollStudentForm' , function(request,response){
+    
+    const enroll=request.params.enrollStudentForm;
+    const enrollStudentFormFind = enrollStudentForm.find((x)=> x.name=== enroll);
+    if(enrollStudentFormFind){
+        response.send(enrollStudentFormFind);
+    }
+    else{
+        response.send('enroll student not found');
+    }
+
+})
+
+app.post('/enrollStudentForm', function(request, response){
+   
+    const enrollFormData=request.body;
+    enrollStudentForm.push(enrollFormData);
+    
+    console.log('enroll student  list ........... ', enrollStudentForm);
+    response.send({data: enrollStudentForm });
+});
 
 app.listen(3000, function() {
     console.log('server is running on port 3000');
