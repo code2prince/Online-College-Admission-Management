@@ -3,14 +3,14 @@ let userList = [];
 
 
 function createUser(){
-    var name = document.getElementById('name').value;
-    var userid = document.getElementById('email').value;
-    var mobile = document.getElementById('mobile').value;
-    var password = document.getElementById('password').value;
-    var confirmPassword = document.getElementById('confirm-password').value;
-    var isPasswordOK = validatePassword(password);
+    const name = document.getElementById('name').value;
+    const userid = document.getElementById('email').value;
+    const mobile = document.getElementById('mobile').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    const isPasswordOK = validatePassword(password);
 
-    var passwordMatched = password === confirmPassword;
+    const passwordMatched = password === confirmPassword;
 
     if(!userid && !password) {
         console.log('Please enter username and password');
@@ -46,11 +46,11 @@ function createUser(){
 
 function validatePassword(password) {
 
-    var format = /[0-9 `@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    var isPasswordValid = format.test(password);
+    const format = /[0-9 `@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    const isPasswordValid = format.test(password);
 
-    var length = password.length;
-    var iStrongPassword =  false; 
+    const length = password.length;
+    const iStrongPassword =  false; 
     
 
     if(length >=8 && length <=16){

@@ -1,16 +1,16 @@
 //console.log("Details");
 let aplicantList = [];
-
+let studentList =[];
 function submitForm() {
 
-    var name = document.getElementById('name').value;
-    var fathername = document.getElementById('fathername').value;
-    var mothername = document.getElementById('mothername').value;
-    var email = document.getElementById('email').value;
-    var number = document.getElementById('number').value;
-    var address = document.getElementById('address').value;
-    var dateofbirth = document.getElementById('date').value;
-    var qualification = document.getElementById('qualification').value;
+    const name = document.getElementById('name').value;
+    const fathername = document.getElementById('fathername').value;
+    const mothername = document.getElementById('mothername').value;
+    const email = document.getElementById('email').value;
+    const number = document.getElementById('number').value;
+    const address = document.getElementById('address').value;
+    const dateofbirth = document.getElementById('date').value;
+    const qualification = document.getElementById('qualification').value;
 
     var radioButtons = document.querySelectorAll('input[name="gender"]');
     var selectedGender;
@@ -64,33 +64,59 @@ function submitForm() {
 
 
 
+    const student = {
+    
+        name: name,
+        gender:selectedGender,
+        yeargap:selectedyeargap,
+        marks:selectedmarks,
+        dateofbirth:dateofbirth,
+        email:email,
+        number:number,
+        address:address,
+        fathername:fathername,
+        occupation:selectedOccupation,
+        mothername:mothername,
+        qualification:qualification,
+    };
+
+        const reqObject = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(student)
+        };
+
+        const studentPromise = fetch('http://localhost:3000/createStudent', reqObject)
+        studentPromise.then(response => response.json()).then(result => console.log('after post call succed, data from server', result));
+
+
 
 
 
     if (name && email && number ) {
         
-        // TODO: create a applicationObject with all the values and push it into an global array applicationArray.
+        
 
-        const aplicantObject ={
-            id:aplicantList.length+1,
-            name:name,
-            gender:selectedGender,
-            yeargap:selectedyeargap,
-            marks:selectedmarks,
-            dateofbirth:dateofbirth,
-            email:email,
-            number:number,
-            address:address,
-            fathername:fathername,
-            occupation:selectedOccupation,
-            mothername:mothername,
-            qualification:qualification,
-        }
+        // const aplicantObject ={
+        //     id:aplicantList.length+1,
+        //     name:name,
+        //     gender:selectedGender,
+        //     yeargap:selectedyeargap,
+        //     marks:selectedmarks,
+        //     dateofbirth:dateofbirth,
+        //     email:email,
+        //     number:number,
+        //     address:address,
+        //     fathername:fathername,
+        //     occupation:selectedOccupation,
+        //     mothername:mothername,
+        //     qualification:qualification,
+        // }
     
-            aplicantList.push(aplicantObject);
-            console.log(aplicantList);
-            displayStudent(aplicantList);
-            displayFilter();
+        //     aplicantList.push(aplicantObject);
+        //     console.log(aplicantList);
+        //     displayStudent(aplicantList);
+        //     displayFilter();
 
     
 
@@ -239,3 +265,29 @@ function filterAplicationList(e){
         displayStudent(aplicantList)
     }
 }
+
+
+function getStudentList() {
+    fetch('http://localhost:3000/getStudentList')
+    .then(response => response.json())
+    .then(result => {
+        studentList = result;
+        printUser(studentList);
+    });
+}
+
+// function printUser(student) {
+    
+//     const studentlistContainer = document.getElementById('studentList');
+//     studentlistContainer.innerHTML = '';
+
+
+//     students.forEach(student => {
+//         const h1 = document.createElement('h1');
+//         h1.innerText = student.name;
+//         studentlistContainer.appendChild(h1);
+//     });
+// }
+
+    
+ 

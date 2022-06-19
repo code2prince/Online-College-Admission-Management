@@ -22,6 +22,19 @@ app.post('/createUser', (req, res) => {
     res.send({msg: 'User successfully added'});
 });
 
+const studentList= [];
+
+app.get('/getStudentList', (req, res) => {
+    res.send(studentList);
+});
+
+app.post('/createStudent', (req, res) => {
+    const student = req.body;
+    studentList.push(student);
+
+    res.send({msg: 'Student successfully added'});
+});
+
 
 
 app.listen(3000, function() {
