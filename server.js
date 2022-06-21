@@ -17,7 +17,15 @@ app.get('/getUserlist', (req, res) => {
 
 app.post('/createUser', (req, res) => {
     const user = req.body;
+    for(i=0; i<userList.length; i++){
+    if(x.userList==='email')
+    {
+        console.log('user exist');
+    }
+    else
+
     userList.push(user);
+    }
 
     res.send({msg: 'User successfully added'});
 });
