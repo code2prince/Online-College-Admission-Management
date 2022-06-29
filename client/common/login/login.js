@@ -14,25 +14,34 @@ var userDatabase = [
     },
 ];
 
-function Login(){
+function Login(user){
 
     
-    var userid=document.getElementById('userid').value;
-    var password=document.getElementById('password').value;
+    // var userid=document.getElementById('userid').value;
+    // var password=document.getElementById('password').value;
 
-    if(!userid && !password) {
+    if(!user.email && !user.password) {
         alert('Pleaes enter username and password');
     } else {
         var foundItem = userDatabase.find(function(item){
-            return item.email ===  userid && item.password === password;
+            return item.email ===  user.email && item.password === user.password;
         });
         if(foundItem) {
-            console.log('you are successfully loggedIN')
+            console.log('you are successfully loggedIN');
+            return true;
         } else {
-            console.log('username & password not found in database, please enter correct detail')
+            console.log('username & password not found in database, please enter correct detail');
+            return false;
         }
     }
 }
+user=
+{ 
+    
+    email: 'prince@gmail.com', 
+    password: 'prince' 
+},
+Login(user);
 
 
 /*
