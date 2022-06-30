@@ -61,9 +61,8 @@ function Login(userLists){
         }
     }
 }
-userLists=
-{ 
-    email: 'prince@gmail.com', 
+userLists=[
+{ email: 'prince@gmail.com', 
     password: 'prince' 
 },
 { 
@@ -78,6 +77,10 @@ userLists=
     email: 'qwerty@gmail.com', 
     password: 'qwerty' 
 },
+]
+
+
+
 Login(userList);
 
 
