@@ -44,6 +44,44 @@ user=
 Login(user);
 
 
+//
+function Login(userLists){
+    if(!userLists.email && !userLists.password) {
+        alert('Please enter username and password');
+    } else {
+        var foundItem = userLists.find(function(item){
+            return item.email ===  userLists.email && item.password === userLists.password;
+        });
+        if(foundItem) {
+            console.log('you are successfully loggedIN');
+            return true;
+        } else {
+            console.log('username & password not found in database, please enter correct detail');
+            return false;
+        }
+    }
+}
+userLists=
+{ 
+    email: 'prince@gmail.com', 
+    password: 'prince' 
+},
+{ 
+    email: 'raj@gmail.com', 
+    password: 'raj' 
+},
+{ 
+    email: 'ram@gmail.com', 
+    password: 'ram' 
+},
+{ 
+    email: 'qwerty@gmail.com', 
+    password: 'qwerty' 
+},
+Login(userList);
+
+
+
 /*
 this function should return true if details are valid or it should
 */

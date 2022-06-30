@@ -36,7 +36,34 @@ app.post('/createUser', (req, res) => {
 
 });
 
-const studentList = [];
+
+
+
+//
+const userLists=[];
+app.post('/loginFeature', (req, res) => {
+    const user = req.body;
+    console.log(userLists.length);
+    let userExist = false;
+    for (i = 0; i < userLists.length; i++) {
+        if (userLists[i].email === userList.email) {
+            userExist = true;
+            console.log('user exist');
+        }
+        
+    }
+    if (userExist === true) {
+        res.send({ msg: 'User already exist, please try with another email account',userLists: userLists });
+    }
+    else {
+        userLists.push(user);
+        res.send({ msg: 'User successfully added' ,userLists: userLists});
+    }
+
+});
+//
+
+const studentLists = [];
 
 app.get('/getStudentList', (req, res) => {
     res.send(studentList);
@@ -64,6 +91,24 @@ app.post('/login', (req, res) => {
 
     res.send({ msg: 'User successfully added' });
 });
+
+
+
+app.post('/loginFeature', (req, res) => {
+    const userLists = req.body;
+    for(i=0; i<userLists.length; i++){
+    if(x.userLists==='email')
+    {
+        console.log('user exist');
+    }
+    else
+
+    userLists.push(user);
+    }
+
+    res.send({ msg: 'User successfully added' });
+});
+
 
 
 app.listen(3000, function () {
