@@ -9,6 +9,7 @@ app.use(express.static(path.join(__dirname, 'client')))
     .get('/', (request, response) => response.render('index.html'));
 
 const userList = [];
+const userApplications = [];
 
 
 app.get('/getUserlist', (req, res) => {
@@ -40,24 +41,41 @@ app.post('/createUser', (req, res) => {
 
 
 //
-const userLists=[];
 app.post('/loginFeature', (req, res) => {
     const user = req.body;
-    console.log(userLists.length);
+    console.log(userList.length);
     let userExist = false;
-    for (i = 0; i < userLists.length; i++) {
-        if (userLists[i].email === userList.email) {
+
+    /*
+    [
+        {
+            email: "raj@mail.com"
+            mobile: "2343124"
+            name: "rajeev"
+            password: "1111"
+        },
+        {
+            email: "prince@mail.com"
+            mobile: "2343124"
+            name: "prince"
+            password: "1111"
+        }
+    ]
+    */
+
+
+    for (i = 0; i < userList.length; i++) {
+        if (userList[i].email === user.email && userList[i].password === user.password) {
             userExist = true;
             console.log('user exist');
         }
         
     }
     if (userExist === true) {
-        res.send({ msg: 'User already exist, please try with another email account',userLists: userLists });
+        res.send({ msg: 'Login successful' });
     }
     else {
-        userLists.push(user);
-        res.send({ msg: 'User successfully added' ,userLists: userLists});
+        res.send({ msg: 'Login failed, please try with correct username and password' });
     }
 
 });

@@ -1,103 +1,31 @@
 
-var userDatabase = [
-    { 
-        name: 'prince', 
-        email: 'prince@gmail.com', 
-        phone: 324523453, 
-        password: 'prince' 
-    },
-    { 
-        name: 'Rajeev', 
-        email: 'Raj@gmail.com', 
-        phone: 84365435, 
-        password: 'raj' 
-    },
-];
 
-function Login(user){
+function Login(){
 
-    
-    // var userid=document.getElementById('userid').value;
-    // var password=document.getElementById('password').value;
+    debugger;
+    var userid=document.getElementById('userid').value;
+    var password=document.getElementById('password').value;
 
-    if(!user.email && !user.password) {
+    if(!userid && !password) {
         alert('Pleaes enter username and password');
     } else {
-        var foundItem = userDatabase.find(function(item){
-            return item.email ===  user.email && item.password === user.password;
-        });
-        if(foundItem) {
-            console.log('you are successfully loggedIN');
-            return true;
-        } else {
-            console.log('username & password not found in database, please enter correct detail');
-            return false;
-        }
+        // send data to server and wait for response
+
+        const user = {
+            email: userid,
+            password: password
+        };
+
+        const reqObject = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user)
+        };
+        
+        const loginPromise = fetch('http://localhost:3000/loginFeature', reqObject);
+        loginPromise.then(response => response.json())
+        .then(result => console.log('after post call succed, data from server', result));
     }
 }
-user=
-{ 
-    
-    email: 'prince@gmail.com', 
-    password: 'prince' 
-},
-Login(user);
 
 
-//
-function Login(userLists){
-    if(!userLists.email && !userLists.password) {
-        alert('Please enter username and password');
-    } else {
-        var foundItem = userLists.find(function(item){
-            return item.email ===  userLists.email && item.password === userLists.password;
-        });
-        if(foundItem) {
-            console.log('you are successfully loggedIN');
-            return true;
-        } else {
-            console.log('username & password not found in database, please enter correct detail');
-            return false;
-        }
-    }
-}
-userLists=
-{ 
-    email: 'prince@gmail.com', 
-    password: 'prince' 
-},
-{ 
-    email: 'raj@gmail.com', 
-    password: 'raj' 
-},
-{ 
-    email: 'ram@gmail.com', 
-    password: 'ram' 
-},
-{ 
-    email: 'qwerty@gmail.com', 
-    password: 'qwerty' 
-},
-Login(userList);
-
-
-
-/*
-this function should return true if details are valid or it should
-*/
-function validatePassword() {
-    var password = 'a@123'; //document.getElementById('password').value;
-    var format = /[0-9`@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    var isPasswordValid = format.test(password);
-    var length = password.length;
-    if(isPasswordValid) {
-        console.log('password is in valid format'); 
-    } else {
-        console.log('password is not in valid format, use atleaset one number and one special character'); 
-    }
-    if(length >=8 && length <=16){
-        console.log('password is strong length'); 
-    } else {
-        console.log('password must be of length between 8 to 16'); 
-    }
-}
