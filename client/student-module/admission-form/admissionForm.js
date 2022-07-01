@@ -95,35 +95,27 @@ function submitForm() {
 
     if (name && email && number ) {
         
-        
-
-        // const aplicantObject ={
-        //     id:aplicantList.length+1,
-        //     name:name,
-        //     gender:selectedGender,
-        //     yeargap:selectedyeargap,
-        //     marks:selectedmarks,
-        //     dateofbirth:dateofbirth,
-        //     email:email,
-        //     number:number,
-        //     address:address,
-        //     fathername:fathername,
-        //     occupation:selectedOccupation,
-        //     mothername:mothername,
-        //     qualification:qualification,
-        // }
-    
-        //     aplicantList.push(aplicantObject);
-        //     console.log(aplicantList);
-        //     displayStudent(aplicantList);
-        //     displayFilter();
-
-    
-
         console.log('sending data', name, dateofbirth, email, number, selectedyeargap, selectedmarks, selectedGender, selectedOccupation, qualification, fathername, mothername, address);
         // console.log('send data to server' ,name,selectedyeargap,selectedmarks,selectedGender,dateofbirth,language,email,number,fathername,selectedqualification2,selectedOccupation,mothername,selectedqualification1,address);
-    } else {
-        alert('Please provide full detail')
+    } else 
+    {
+        alert('Please provide full detail');
+
+        const students= {
+            email: email,
+           
+        };
+
+        const reqObject = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(students)
+        };
+        
+        const formPromise = fetch('http://localhost:3000/formFeature', reqObject);
+        formPromise.then(response => response.json())
+        .then(result => console.log('after post call succed, data from server', result));
+
     }
 }
 

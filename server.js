@@ -9,7 +9,6 @@ app.use(express.static(path.join(__dirname, 'client')))
     .get('/', (request, response) => response.render('index.html'));
 
 const userList = [];
-const userApplications = [];
 
 
 app.get('/getUserlist', (req, res) => {
@@ -40,48 +39,7 @@ app.post('/createUser', (req, res) => {
 
 
 
-//
-app.post('/loginFeature', (req, res) => {
-    const user = req.body;
-    console.log(userList.length);
-    let userExist = false;
-
-    /*
-    [
-        {
-            email: "raj@mail.com"
-            mobile: "2343124"
-            name: "rajeev"
-            password: "1111"
-        },
-        {
-            email: "prince@mail.com"
-            mobile: "2343124"
-            name: "prince"
-            password: "1111"
-        }
-    ]
-    */
-
-
-    for (i = 0; i < userList.length; i++) {
-        if (userList[i].email === user.email && userList[i].password === user.password) {
-            userExist = true;
-            console.log('user exist');
-        }
-        
-    }
-    if (userExist === true) {
-        res.send({ msg: 'Login successful' });
-    }
-    else {
-        res.send({ msg: 'Login failed, please try with correct username and password' });
-    }
-
-});
-//
-
-const studentLists = [];
+const studentList= [];
 
 app.get('/getStudentList', (req, res) => {
     res.send(studentList);
@@ -127,6 +85,24 @@ app.post('/loginFeature', (req, res) => {
     res.send({ msg: 'User successfully added' });
 });
 
+
+//
+app.post('/formFeature', (req, res) => {
+    const studentLists = req.body;
+    for(i=0; i<studentLists.length; i++){
+    if(x.studentLists==='email')
+    {
+        console.log('user exist');
+    }
+    else
+
+    studentLists.push(student);
+    }
+
+    res.send({ msg: 'User successfully added' });
+});
+
+//
 
 
 app.listen(3000, function () {
