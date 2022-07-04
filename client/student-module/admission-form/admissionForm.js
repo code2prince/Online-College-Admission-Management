@@ -1,4 +1,4 @@
-//console.log("Details");
+
 let aplicantList = [];
 let studentList =[];
 function submitForm() {
@@ -79,14 +79,14 @@ function submitForm() {
         mothername:mothername,
         qualification:qualification,
     };
-
+/////////////////
         const reqObject = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(student)
         };
 
-        const studentPromise = fetch('http://localhost:3000/createStudent', reqObject)
+        const studentPromise = fetch('http://localhost:3000/enrollStudentApplication', reqObject)
         studentPromise.then(response => response.json()).then(result => console.log('after post call succed, data from server', result));
 
 
@@ -100,7 +100,7 @@ function submitForm() {
     } else 
     {
         alert('Please provide full detail');
-
+//////
         const students= {
             email: email,
            
@@ -115,6 +115,7 @@ function submitForm() {
         const formPromise = fetch('http://localhost:3000/formFeature', reqObject);
         formPromise.then(response => response.json())
         .then(result => console.log('after post call succed, data from server', result));
+// 
 
     }
 }
