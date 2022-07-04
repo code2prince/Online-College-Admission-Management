@@ -37,7 +37,7 @@ app.post('/createUser', (req, res) => {
 });
 
 
-
+////////
 
 const studentList= [];
 
@@ -45,12 +45,14 @@ app.get('/getStudentList', (req, res) => {
     res.send(studentList);
 });
 
-app.post('/createStudent', (req, res) => {
+app.post('/enrollStudentApplication', (req, res) => {
     const student = req.body;
     studentList.push(student);
 
     res.send({ msg: 'Student successfully added' });
 });
+
+////////
 
 
 app.post('/login', (req, res) => {
@@ -103,6 +105,44 @@ app.post('/formFeature', (req, res) => {
 });
 
 //
+
+
+
+
+
+
+const viewList= [];
+
+app.get('/getviewtList', (req, res) => {
+    res.send(viewList);
+});
+
+app.post('/viewStudentApplication', (req, res) => {
+    const student = req.body;
+    //studentList.push(student);
+
+    res.send({ msg: 'Student successfully added' });
+});
+
+
+
+
+
+
+app.post('/formFeature', (req, res) => {
+    const viewList = req.body;
+    for(i=0; i<viewList.length; i++){
+    if(x.viewList==='email')
+    {
+        console.log('user exist');
+    }
+    else
+
+    studentLists.push(student);
+    }
+
+    res.send({ msg: 'User successfully added' });
+});
 
 
 app.listen(3000, function () {
