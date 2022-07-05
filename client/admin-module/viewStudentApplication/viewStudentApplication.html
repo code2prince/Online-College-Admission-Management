@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <title>VIEW STUDENT Application Details</title> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>VIEW STUDENT Application Details</title> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="viewStudentApplication.css" />
-    <title>ViewStudentAdmission</title>
-    <script src="viewStudentApplication.js"></script>
-</head>
-
-<body>
-    <header class="header">
-        <div class="header-grid">
-            <div class="logo">
-                <img src="../../image/adm logo.jpg" width=50px; />
-                <h3> Engineering College </h3>
+        <link rel="stylesheet" href="viewStudentApplication.css" />
+        <title>ViewStudentAdmission</title>
+        
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-grid">
+                <div class="logo">
+                    <img src="../../image/adm logo.jpg" width=50px; />
+                    <h3> Engineering College </h3>
+                </div>
+                <div class="website-menu">
+                    <div> <a class="menu-item" href="../../index.html">Home</a> </div>
+                    <div> <a class="menu-item" href="about.html">About</a> </div>
+                    <div> <a class="menu-item" href="contactus.html">Contact Us</a> </div>
+                    <div> <a class="menu-item" href="../../common/login/login.html">Login</a> </div>
+                    <div> <a class="menu-item" href="../../../client/student-module/admission-form/admissionForm.html">Form</a> </div>
+                </div>
             </div>
-            <div class="website-menu">
-                <div> <a class="menu-item" href="../../index.html">Home</a> </div>
-                <div> <a class="menu-item" href="about.html">About</a> </div>
-                <div> <a class="menu-item" href="contactus.html">Contact Us</a> </div>
-                <div> <a class="menu-item" href="../../common/login/login.html">Login</a> </div>
-                <div> <a class="menu-item" href="../../../client/student-module/admission-form/admissionForm.html">Form</a> </div>
+
+        </header>
+        <div class="scroll">
+            <marquee>
+                WELCOME TO ENGINEERING COLLEGE (CHENNAI) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;B. Tech 2022
+                admission open. {ApplyNow} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; M. Tech registration window closed.
+            </marquee>
+
+            <div class="application-row-grid student-Application student-applicant-list-header">
+                <div>S.No</div>
+                <div>Name</div>
+                <div>Gender</div>
+                <div>D.O.B</div>
+                <div>Email</div>
+                <div>Number</div>
+                <div>Address</div>
+                <div>Father name</div>
+                <div>Mother name</div>
+                <div>Qualification</div>
             </div>
+            
+            <div id="application-list">
+            </div>
+
+
         </div>
-
-    </header>
-    <div class="scroll">
-        <marquee>
-            WELCOME TO ENGINEERING COLLEGE (CHENNAI) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;B. Tech 2022
-            admission open. {ApplyNow} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; M. Tech registration window closed.
-        </marquee>
-
-        <div class="student-Application student-applicant-list-header">
-            <div>S.No</div>
-            <div>Name</div>
-            <div>Gender</div>
-            <div>D.O.B</div>
-            <div>Email</div>
-            <div>Number</div>
-            <div>Address</div>
-            <div>Father name</div>
-            <div>Mother name</div>
-            <div>Qualification</div>
-           
-        </div>
-
-
-    </div>
-</body>
+        <script src="viewStudentApplication.js"></script>
+    </body>
+</html>    
