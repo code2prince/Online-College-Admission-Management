@@ -40,7 +40,7 @@ function createUser(){
         body: JSON.stringify(user)
     };
     
-    const userPromise = fetch('http://localhost:3000/createUser', reqObject)
+    const userPromise = fetch('http://localhost:3000/signUpUser', reqObject)
     userPromise.then(response => response.json()).then(result => console.log('after post call succed, data from server', result));
 }
 

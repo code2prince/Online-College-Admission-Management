@@ -8,14 +8,30 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'client')))
     .get('/', (request, response) => response.render('index.html'));
 
-const userList = [];
+const userList = [
+    {
+        email: "princekumarsharma365@gmail.com",
+        mobile: "6200978239",
+        name: "SHRUTI SHARMA",
+        password: "12345",
+        type:"student",
+    },
+
+    {
+        email: "admin@gmail.com",
+        mobile: "6200978239",
+        name: "SHRUTI SHARMA",
+        password: "12345",
+        type: "admin"
+    },
+];
 
 
 app.get('/getUserlist', (req, res) => {
     res.send(userList);
 });
 
-app.post('/createUser', (req, res) => {
+app.post('/signUpUser', (req, res) => {
     const user = req.body;
     console.log(userList.length);
     let userExist = false;
@@ -54,41 +70,6 @@ app.post('/enrollStudentApplication', (req, res) => {
 
 ////////
 
-
-app.post('/login', (req, res) => {
-    const user = req.body;
-    // for(i=0; i<userList.length; i++){
-    // if(x.userList==='email')
-    // {
-    //     console.log('user exist');
-    // }
-    // else
-
-    // userList.push(user);
-    // }
-
-    res.send({ msg: 'User successfully added' });
-});
-
-
-
-app.post('/loginFeature', (req, res) => {
-    const userLists = req.body;
-    for(i=0; i<userLists.length; i++){
-    if(x.userLists==='email')
-    {
-        console.log('user exist');
-    }
-    else
-
-    userLists.push(user);
-    }
-
-    res.send({ msg: 'User successfully added' });
-});
-
-
-//
 app.post('/formFeature', (req, res) => {
     const studentLists = req.body;
     for(i=0; i<studentLists.length; i++){
@@ -104,10 +85,45 @@ app.post('/formFeature', (req, res) => {
     res.send({ msg: 'User successfully added' });
 });
 
-//
+//////////
+
+// app.post('/login', (req, res) => {
+//     const user = req.body;
+//     // for(i=0; i<userList.length; i++){
+//     // if(x.userList==='email')
+//     // {
+//     //     console.log('user exist');
+//     // }
+//     // else
+
+//     // userList.push(user);
+//     // }
+
+//     res.send({ msg: 'User successfully login' });
+// });
 
 
-
+//console.log(userList[0]);
+app.post('/loginFeature', (req, res) => {
+    const user = req.body;
+    var flag=false;
+    for(i=0; i<userList.length; i++){
+        
+        if(user.userList==='email' && user.userList==='password')
+        {
+            //console.log('user exist');
+            res.send({ msg: 'User successfully login' });
+            return flag=true;
+        }
+        else
+        {
+            res.send({msg:'username and password not matching please try with correct userid and password'});
+            
+        }
+    }
+    return flag;
+    
+});
 
 
 
@@ -143,6 +159,23 @@ app.post('/formFeature', (req, res) => {
 
     res.send({ msg: 'User successfully added' });
 });
+
+
+// viewStudentApplication
+
+const studentApplicationList= [];
+
+app.get('/getStudentList', (req, res) => {
+    res.send(studentApplicationList);
+});
+
+app.post('/getStudentList', (req, res) => {
+    const student = req.body;
+    studentApplicationList.push(student);
+
+    res.send({ msg: 'Student apllication successfully added' });
+});
+
 
 
 app.listen(3000, function () {
