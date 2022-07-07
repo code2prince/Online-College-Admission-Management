@@ -5,6 +5,7 @@ let userList = [];
 function createUser(){
     const name = document.getElementById('name').value;
     const userid = document.getElementById('email').value;
+    const type = document.getElementById('type').value;
     const mobile = document.getElementById('mobile').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
@@ -32,6 +33,7 @@ function createUser(){
         email: userid,
         mobile: mobile,
         password: password,
+        type:type,
     };
 
     const reqObject = {
