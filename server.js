@@ -15,7 +15,7 @@ const userList = [
         mobile: "6200978239",
         name: "SHRUTI SHARMA",
         password: "12345",
-        type:"student",
+        type:"Student",
     },
 
     {
@@ -23,14 +23,14 @@ const userList = [
         mobile: "6200978239",
         name: "SHRUTI SHARMA",
         password: "12345",
-        type: "admin"
+        type: "Admin"
     },
     {
         email: "amit@gmail.com",
         mobile: "6200978239",
         name: "amit SHARMA",
         password: "12345",
-        type: "admin"
+        type: "Admin"
     },
 ];
 
@@ -94,48 +94,53 @@ app.post('/formFeature', (req, res) => {
     res.send({ msg: 'User successfully added' });
 });
 
+// login 
 
 app.post('/loginFeature', (req, res) => {
     const user = req.body;
 
-    // 1st way
+   // 1st way
     var loginSuccess = false;
     for(var i=0; i<userList.length; i++) {
-        if(userList[i].email === user.email  && userList[i].password === user.password){
+        if(userList[i].email === user.email  && userList[i].password === user.password && userList[i].type===user.type){
             loginSuccess = true;
         } 
     }
     if(loginSuccess === true) {
         res.send('success')
     } else {
-        res.send('fail')
+        res.send({msg:'user not found'})
     }
 
-    // 2nd way
-    var index = userList.findIndex(u => (u.email === user.email && u.password === user.password) )
-    if(index!==-1) {
-        res.send(userList[index])
-    } else {
-        res.send('login failed')
-    }
+    // // 2nd way
+    // var index = userList.findIndex(u => (u.email === user.email && u.password === user.password) )
+    // if(index!==-1) {
+    //     res.send(userList[index])
+    // } else {
+    //     res.send('login failed')
+    // }
 
-    // 3rd way
-    var foundUser = userList.find(u => (u.email === user.email && u.password === user.password) )
-    if(foundUser) {
-        res.send(foundUser)
-    } else {
-        res.send('login failed')
-    }
 
-    // 4th way
-    var foundUserArr = userList.filter(u => (u.email === user.email && u.password === user.password) )
-    if(foundUserArr.length > 0) {
-        res.send(foundUserArr[0])
-    } else {
-        res.send('login failed')
-    }
+    // // 3rd way
+    // var foundUser = userList.find(u => (u.email === user.email && u.password === user.password) )
+    // if(foundUser) {
+    //     res.send(foundUser)
+    // } else {
+    //     res.send('login failed')
+    // }
+
+
+    // // 4th way
+    // var foundUserArr = userList.filter(u => (u.email === user.email && u.password === user.password) )
+    // if(foundUserArr.length > 0) {
+    //     res.send(foundUserArr[0])
+    // } else {
+    //     res.send('login failed')
+    // }
+
 
     //5th way
+    /*
     var isLogin = userList.some(u => (u.email === "amit@gmail.com" && u.password === "12345") );
     if(isLogin) {
         res.send('success')
@@ -143,6 +148,7 @@ app.post('/loginFeature', (req, res) => {
     if(isLogin) {
         res.send('fail')
     }
+    */
 
     // send back LOGIN FAIL MSG if user not found
 
@@ -151,7 +157,7 @@ app.post('/loginFeature', (req, res) => {
 });
 
 
-
+/////////////////////////////////////////////////////////////////////
 const viewList= [];
 
 app.get('/getviewtList', (req, res) => {

@@ -13,14 +13,17 @@ function createUser(){
 
     const passwordMatched = password === confirmPassword;
 
-    if(!userid && !password) {
-        console.log('Please enter username and password');
+    if(!userid || !password) {
+        alert('Please enter Username and Password');
         return;
     }
     
     if(!passwordMatched) {
-        console.log('password and confirm password doesnt match');
+        alert("Your Password and Confirm-Password doesn't match");
         return;
+    }
+    else{
+        alert("Successfully Registered and Your Userid is your email");
     }
 
     // if(!isPasswordOK) {
