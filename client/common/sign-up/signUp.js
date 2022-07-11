@@ -22,9 +22,7 @@ function createUser(){
         alert("Your Password and Confirm-Password doesn't match");
         return;
     }
-    else{
-        alert("Successfully Registered and Your Userid is your email");
-    }
+    
 
     // if(!isPasswordOK) {
     //     console.log('password sohuld have one number, 1 special character and length between 8 to 16');
@@ -46,7 +44,14 @@ function createUser(){
     };
     
     const userPromise = fetch('http://localhost:3000/signUpUser', reqObject)
-    userPromise.then(response => response.json()).then(result => console.log('after post call succed, data from server', result));
+    userPromise.then(response => response.json()).then(result =>{
+        if (result==='success'){
+            alert("you are successfully logged in");
+        }
+        else{
+            alert("Login Failed, please enter correct userid and password");
+        }
+    } );
 }
 
 function validatePassword(password) {

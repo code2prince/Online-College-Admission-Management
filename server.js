@@ -52,11 +52,15 @@ app.post('/signUpUser', (req, res) => {
         
     }
     if (userExist === true) {
-        res.send({ msg: 'User already exist, please try with another email account',userList: userList });
+         const response={
+            msg: 'User already exist, please try with another email account',
+            isRegistered: false,
+         }
+         res.send(response);
     }
     else {
         userList.push(user);
-        res.send({ msg: 'User successfully added' ,userList: userList});
+        res.send({ msg: 'User successfully added' , isRegistered: true, userid:user.email});
     }
 
 });
@@ -107,9 +111,9 @@ app.post('/loginFeature', (req, res) => {
         } 
     }
     if(loginSuccess === true) {
-        res.send('success')
+        res.send({loginSuccess:true ,userid:user.email})
     } else {
-        res.send({msg:'user not found'})
+        res.send({loginSuccess:false})
     }
 
     // // 2nd way
@@ -170,10 +174,6 @@ app.post('/viewStudentApplication', (req, res) => {
 
     res.send({ msg: 'Student successfully added' });
 });
-
-
-
-
 
 
 app.post('/formFeature', (req, res) => {
