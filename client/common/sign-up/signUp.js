@@ -45,11 +45,12 @@ function createUser(){
     
     const userPromise = fetch('http://localhost:3000/signUpUser', reqObject)
     userPromise.then(response => response.json()).then(result =>{
-        if (result==='success'){
-            alert("you are successfully logged in");
+        
+        if (result.isRegistered === true){
+            alert("you are successfully Registered ");
         }
         else{
-            alert("Login Failed, please enter correct userid and password");
+            alert(result.msg);
         }
     } );
 }

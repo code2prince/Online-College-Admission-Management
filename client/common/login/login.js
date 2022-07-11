@@ -26,7 +26,23 @@ function Login(){
         
         const loginPromise = fetch('http://localhost:3000/loginFeature', reqObject);
         loginPromise.then(response => response.json())
-        .then(result => console.log('after post call succed, data from server', result));
+        .then(result => {
+            if(result.loginSuccess === false) {
+                alert('login failed, please try again');
+
+            }
+            else {
+                // Login is successful here
+                // if user is admin then send to admin dashboard
+                if(type === 'Admin') {
+                    window.location.href = 'http://localhost:3000/admin-module/dash-board/dashboard.html';
+                }
+                else {
+                    window.location.href = 'http://localhost:3000/student-module/dash-board/dashboard.html';
+                }
+                // if user is student, send to studnet dashboard
+            }
+        });
       //  alert("Succesfully Login");
     }
 }

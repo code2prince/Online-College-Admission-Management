@@ -60,7 +60,8 @@ app.post('/signUpUser', (req, res) => {
     }
     else {
         userList.push(user);
-        res.send({ msg: 'User successfully added' , isRegistered: true, userid:user.email});
+        const response = { msg: 'User successfully added' , isRegistered: true, userid:user.email};
+        res.send(response);
     }
 
 });
