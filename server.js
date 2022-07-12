@@ -34,8 +34,6 @@ const userList = [
     },
 ];
 
-
-
 app.get('/getUserlist', (req, res) => {
     res.send(userList);
 });
