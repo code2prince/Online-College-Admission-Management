@@ -1,7 +1,5 @@
 
 let userList = [];
-
-
 function createUser(){
     const name = document.getElementById('name').value;
     const userid = document.getElementById('email').value;
