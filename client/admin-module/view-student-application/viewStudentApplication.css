@@ -69,6 +69,11 @@ body {
 
 .application-row-grid {
     display: grid;
-    grid-template-columns: 40px 150px 80px 80px 250px 100px 200px 150px 150px 80px;
+    grid-template-columns: 40px 180px 80px 100px 280px 100px 250px 120px 120px 80px;
     grid-gap: 5px;
+    margin-bottom:10px;
+    
+
+
+   
 }
