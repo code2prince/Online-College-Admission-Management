@@ -41,6 +41,12 @@ function displayStudentApplications(list){
     var qualification =document.createElement('div');
     qualification.innerText = list[i].qualification;
 
+    var course =document.createElement('div');
+    course.innerText = list[i].course;
+
+    var stream =document.createElement('div');
+    stream.innerText = list[i].stream;
+
     var studentRow = document.createElement('div');
     studentRow.setAttribute('class','application-row-grid');
 
@@ -54,6 +60,8 @@ function displayStudentApplications(list){
     studentRow.appendChild(fathername);
     studentRow.appendChild(mothername);
     studentRow.appendChild(qualification);
+    studentRow.appendChild(course);
+    studentRow.appendChild(stream);
 
     const whereToDisplay=document.getElementById('application-list');
     whereToDisplay.appendChild(studentRow);

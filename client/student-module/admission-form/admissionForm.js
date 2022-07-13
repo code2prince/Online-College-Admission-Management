@@ -11,6 +11,8 @@ function submitForm() {
     const address = document.getElementById('address').value;
     const dateofbirth = document.getElementById('date').value;
     const qualification = document.getElementById('qualification').value;
+    const course = document.getElementById('course').value;
+    const stream = document.getElementById('stream').value;
 
     var radioButtons = document.querySelectorAll('input[name="gender"]');
     var selectedGender;
@@ -50,6 +52,12 @@ function submitForm() {
         language.push(checkbox.value);
     });
 
+    var checkboxes = document.querySelectorAll('input[name="Self Declearation"]:checked');
+    var SelfDeclearation = [];
+    checkboxes.forEach((checkbox) => {
+        SelfDeclearation.push(checkbox.value);
+    });
+
 
   
     var radioButtons = document.querySelectorAll('input[name="Occupation"]');
@@ -78,6 +86,8 @@ function submitForm() {
         occupation:selectedOccupation,
         mothername:mothername,
         qualification:qualification,
+        course:course,
+        stream:stream,
     };
 /////////////////
         const reqObject = {
@@ -95,7 +105,7 @@ function submitForm() {
 
     if (name && email && number ) {
         
-        console.log('sending data', name, dateofbirth, email, number, selectedyeargap, selectedmarks, selectedGender, selectedOccupation, qualification, fathername, mothername, address);
+        console.log('sending data', name, dateofbirth, email, number, selectedyeargap, selectedmarks, selectedGender, selectedOccupation, qualification,course,stream, fathername, mothername, address);
         // console.log('send data to server' ,name,selectedyeargap,selectedmarks,selectedGender,dateofbirth,language,email,number,fathername,selectedqualification2,selectedOccupation,mothername,selectedqualification1,address);
     } else 
     {
@@ -158,6 +168,12 @@ function displayStudent(list){
 
       var qualification=document.createElement('div');
       qualification.innerText = list[i].qualification;
+
+      var course=document.createElement('div');
+      course.innerText = list[i].course;
+
+      var stream=document.createElement('div');
+      stream.innerText = list[i].stream;
   
   
       var deleteStudnetBtton =  document.createElement('button');
@@ -182,6 +198,8 @@ function displayStudent(list){
       studentRow.appendChild(fathername);
       studentRow.appendChild(mothername);
       studentRow.appendChild(qualification);
+      studentRow.appendChild(course);
+      studentRow.appendChild(stream);
       studentRow.appendChild(deleteStudnetBtton);
   
       whereToDisplay.appendChild(studentRow)

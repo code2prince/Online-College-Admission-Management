@@ -31,7 +31,8 @@
                 <div> <a class="menu-item" href="contactus.html">Contact Us</a> </div>
                 <div> <a class="menu-item" href="../../common/login/login.html">Login</a> </div>
                 <div> <a class="menu-item" href="register.html">Register</a> </div>
-                <div> <a class="menu-item" href="../../admin-module/view-student-application/viewStudentApplication.html">Status</a> </div>
+                <div> <a class="menu-item"
+                        href="../../admin-module/view-student-application/viewStudentApplication.html">Status</a> </div>
 
             </div>
         </div>
@@ -68,8 +69,8 @@
                 <lebel for="Qualification">Qualification:</lebel>
                 <select name="Choose your higher qualification" id="qualification">
                     <option value="select">select</option>
-                    <option value="10th(SSC/METRIC)">10th(SSC/METRIC)</option>
-                    <option value="12th(HSC/INTERMEDIATE)">12(HSC/INTERMEDIATE)</option>
+                    <option value="10th">10th</option>
+                    <option value="12th">12th</option>
                     <option value="GRADUATION">GRADUATION</option>
                     <option value="Post-Graduation">Post-Graduation</option>
                 </select>
@@ -93,6 +94,28 @@
                     <input name="yeargap" type="radio" value="no">
                     No
                 </div>
+            </div>
+            <div class="input-row">
+                <lebel for="Course">Course:</lebel>
+                <select name="Choose Course" id="course">
+                    <option value="select">Select Course</option>
+                    <option value="BTech">BTech</option>
+                    <option value="MTech">MTech</option>
+                    <option value="MBA">MBA</option>
+                    <option value="Phd">Phd</option>
+                </select>
+            </div>
+
+            <div class="input-row">
+                <lebel for="Stream">Stream:</lebel>
+                <select name="Choose your Stream" id="stream">
+                    <option value="select">Select Stream</option>
+                    <option value="Computer-Science">Computer-Science</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Electrical(EE)">Electrical(EE)</option>
+                    <option value="Aeronautical">Aeronautical</option>
+                </select>
             </div>
 
             <div class="input-row">
@@ -148,9 +171,19 @@
 
             <div class="input-row"> Address: <input id="address" type="text" placeholder="Enter your parmanent address">
             </div>
-            <div class="input-row">
-
+            
                 <div></div>
+
+                <div class="input-row">
+                    <div>Self-Declearation:</div>
+                    <div>
+                        <input name="Self Declearation" type="checkbox" value="Self Declearation">
+                        I agreed above details are correct.
+                    </div>
+                </div>
+
+                <div class="input-row">
+                  <div></div>
                 <div>
                     <button onclick="submitForm();"> Submit</button>
 
@@ -159,37 +192,37 @@
         </div>
     </div>
 
-            <div>
-                <div class="heading-filter-grid">
-                    <h2>Applicant Details:</h2>
-                    <div id="filter"></div>
-                </div>
-                    
-                
-                
-                <div class="student-row student-list-header">
-                    <div>S.No</div>
-                    <div>Name</div>
-                    <div>Gender</div>
-                    <div>D.O.B</div>
-                    <div>Email</div>
-                    <div>Number</div>
-                    <div>Address</div>
-                    <div>Father name</div>
-                    <div>Mother name</div>
-                    <div>Qualification</div>
-                    <div>Action</div>
-                </div>
-    
-                <div id="student-list">
-                    
-                </div>
-            </div>
+    <div>
+        <div class="heading-filter-grid">
+            <h2>Applicant Details:</h2>
+            <div id="filter"></div>
+        </div>
 
-            <!-- <button onclick="getStudentlist()">get users</button>
+
+
+        <div class="student-row student-list-header">
+            <div>S.No</div>
+            <div>Name</div>
+            <div>Gender</div>
+            <div>D.O.B</div>
+            <div>Email</div>
+            <div>Number</div>
+            <div>Address</div>
+            <div>Father name</div>
+            <div>Mother name</div>
+            <div>Qualification</div>
+            <div>Action</div>
+        </div>
+
+        <div id="student-list">
+
+        </div>
+    </div>
+
+    <!-- <button onclick="getStudentlist()">get users</button>
 
             <div id="Studentlist"></div> -->
-        
+
 </body>
 
 </html>
