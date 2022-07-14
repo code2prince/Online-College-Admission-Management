@@ -52,7 +52,7 @@ function submitForm() {
         language.push(checkbox.value);
     });
 
-    var checkboxes = document.querySelectorAll('input[name="Self Declearation"]:checked');
+    var checkboxes = document.querySelectorAll('input[name="SelfDeclearation"]:checked');
     var SelfDeclearation = [];
     checkboxes.forEach((checkbox) => {
         SelfDeclearation.push(checkbox.value);
@@ -88,6 +88,8 @@ function submitForm() {
         qualification:qualification,
         course:course,
         stream:stream,
+        language:language,
+        SelfDecleared:SelfDeclearation,
     };
 /////////////////
         const reqObject = {
@@ -107,7 +109,8 @@ function submitForm() {
         
         console.log('sending data', name, dateofbirth, email, number, selectedyeargap, selectedmarks, selectedGender, selectedOccupation, qualification,course,stream, fathername, mothername, address);
         // console.log('send data to server' ,name,selectedyeargap,selectedmarks,selectedGender,dateofbirth,language,email,number,fathername,selectedqualification2,selectedOccupation,mothername,selectedqualification1,address);
-    } else 
+    }
+    else 
     {
         alert('Please provide full detail');
         const students= {

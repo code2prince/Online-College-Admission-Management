@@ -13,6 +13,8 @@ function displayStudentApplications(list){
   
     var seqNum  = document.createElement('div');
     seqNum.innerText = i+1;
+    // var status  = document.createElement('div');
+    // status.innerText = list[i].status;
 
     var name = document.createElement('div');
     name.innerText = list[i].name;

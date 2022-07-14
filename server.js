@@ -203,7 +203,7 @@ app.post('/getStudentList', (req, res) => {
     const student = req.body;
     studentApplicationList.push(student);
 
-    res.send({ msg: 'Student apllication successfully added' });
+    res.send({ msg: 'Student application successfully added' });
 });
 
 
