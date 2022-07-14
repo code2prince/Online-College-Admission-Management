@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.header {
+    background-color: aquamarine;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 1px 2px 3px #bbb;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    
+}
+.logo-websitetitle {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-gap: 20px;
+    align-items: center;
+}
+.logo {
+    width: 50px;
+}
+
+.website-menu {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #555;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+    color: #0099ff;
+}
+.input-row{
+    display:grid;
+    grid-template-columns: 60px 400px;
+}
+.contact-form {
+    width: 500px;
+    border: 1px solid #cdcdcd;
+    padding: 20px;
+    margin: 50px auto 0;
+    border-radius: 20px;
+    background-color: #0099ff;
+}
+.scrollable-nottification{
+    background-color: yellowgreen;
+    color: #ffffff;
+    padding: 5px 10px;
+}
