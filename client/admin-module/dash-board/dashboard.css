@@ -54,6 +54,7 @@ body {
 .admission-ad {
     padding: 20px;
     position: relative;
+    
 }
 .admission-ad > div {
     border: 2px solid #3b92ac;
@@ -85,6 +86,7 @@ body {
     position: absolute;
     top: 90px;
     right: 55px;
+    text-decoration: none;
 }
 
 .big-heading {

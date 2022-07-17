@@ -33,6 +33,7 @@ body {
 }
 .menu-item:hover{
     color:red;
+    text-decoration: underline;
 }
 .menu-item {
     text-decoration:none;
@@ -95,6 +96,7 @@ body {
     position: absolute;
     top: 90px;
     right: 55px;
+    text-decoration: none;
 }
 
 .big-heading {

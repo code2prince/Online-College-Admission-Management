@@ -18,6 +18,9 @@ body {
     padding: 10px 20px;
     border-bottom: 1px solid aqua;
     box-shadow: 1px 2px 3px #bbb;
+    position:sticky;
+    top:0;
+    left:0;
 }
 
 h3 { color:purple;}
@@ -40,7 +43,7 @@ button {
 }
 .website-menu {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto;
     grid-gap: 10px;
     align-items: center;
 }
@@ -50,8 +53,10 @@ button {
     color:blueviolet;
 }
 .menu-item:hover {
+    text-decoration: underline;
       color:red;
 }
+
 .logo {
     display: grid;
     grid-template-columns: 50px auto;

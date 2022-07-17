@@ -2,7 +2,6 @@
 let aplicantList = [];
 let studentList =[];
 function submitForm() {
-
     const name = document.getElementById('name').value;
     const fathername = document.getElementById('fathername').value;
     const mothername = document.getElementById('mothername').value;
@@ -16,7 +15,6 @@ function submitForm() {
 
     var radioButtons = document.querySelectorAll('input[name="gender"]');
     var selectedGender;
-    // for(var i=0; i<radioButtons.length; i++)
     for (var rd of radioButtons) {
         if (rd.checked) {
             selectedGender = rd.value;
@@ -27,7 +25,6 @@ function submitForm() {
 
     var radioButtons = document.querySelectorAll('input[name="yeargap"]');
     var selectedyeargap;
-    // for(var i=0; i<radioButtons.length; i++)
     for (var rd of radioButtons) {
         if (rd.checked) {
             selectedyeargap = rd.value;
@@ -38,7 +35,6 @@ function submitForm() {
 
     var radioButtons = document.querySelectorAll('input[name="marks"]');
     var selectedmarks;
-    // for(var i=0; i<radioButtons.length; i++)
     for (var rd of radioButtons) {
         if (rd.checked) {
             selectedmarks = rd.value;
@@ -62,7 +58,6 @@ function submitForm() {
   
     var radioButtons = document.querySelectorAll('input[name="Occupation"]');
     var selectedOccupation;
-    // for(var i=0; i<radioButtons.length; i++)
     for (var rd of radioButtons) {
         if (rd.checked) {
             selectedOccupation = rd.value;
@@ -91,7 +86,7 @@ function submitForm() {
         language:language,
         SelfDecleared:SelfDeclearation,
     };
-/////////////////
+  /////////////////
         const reqObject = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -99,7 +94,16 @@ function submitForm() {
         };
 
         const studentPromise = fetch('http://localhost:3000/enrollStudentApplication', reqObject)
-        studentPromise.then(response => response.json()).then(result => console.log('after post call succed, data from server', result));
+        studentPromise.then(response => response.json()).then(result => 
+        //     {
+        //     if(result.isAgreed===true){
+        //         alert("you are agree")
+        //     }
+        //     else{
+        //         alert(result.msg);
+        //     }
+        // });
+            console.log('after post call succed, data from server', result));
 
 
 
@@ -118,6 +122,7 @@ function submitForm() {
            
         };
 
+
         const reqObject = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -126,7 +131,7 @@ function submitForm() {
         
         const formPromise = fetch('http://localhost:3000/formFeature', reqObject);
         formPromise.then(response => response.json())
-        .then(result => console.log('after post call succed, data from server', result));
+        .then(result => console.log('after post call succeed, data from server', result));
     }
    // alert("sucessfully submitted")
 }

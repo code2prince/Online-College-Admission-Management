@@ -66,6 +66,7 @@ app.post('/signUpUser', (req, res) => {
 
 
 ////////
+//admission form
 
 const studentList= [];
 
@@ -75,12 +76,13 @@ app.get('/getStudentList', (req, res) => {
 
 app.post('/enrollStudentApplication', (req, res) => {
     const student = req.body;
-    studentList.push(student);
+  studentList.push(student);
 
     res.send({ msg: 'Student successfully added' });
 });
+//////// 
 
-////////
+// admission form
 
 app.post('/formFeature', (req, res) => {
     const studentLists = req.body;
@@ -94,7 +96,7 @@ app.post('/formFeature', (req, res) => {
     studentLists.push(student);
     }
 
-    res.send({ msg: 'User successfully added' });
+    res.send({ msg: 'User successfully Applied' });
 });
 
 // login 

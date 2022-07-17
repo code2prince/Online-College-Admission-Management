@@ -32,6 +32,7 @@ body {
     align-items: center;
 }
 .menu-item:hover{
+    text-decoration: underline;
     color:red;
 }
 .menu-item {

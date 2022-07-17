@@ -33,6 +33,7 @@ body {
 }
 .menu-item:hover{
     color:red;
+    text-decoration: underline;
 }
 .menu-item {
     text-decoration:none;
