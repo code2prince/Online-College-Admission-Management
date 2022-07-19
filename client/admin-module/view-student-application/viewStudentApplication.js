@@ -1,4 +1,4 @@
-
+applicantList=[];
 function getStudentApplicationList(){
   fetch("http://localhost:3000/getStudentList")
   .then(response=>response.json())
@@ -13,9 +13,7 @@ function displayStudentApplications(list){
   
     var seqNum  = document.createElement('div');
     seqNum.innerText = i+1;
-    // var status  = document.createElement('div');
-    // status.innerText = list[i].status;
-
+  
     var name = document.createElement('div');
     name.innerText = list[i].name;
 
@@ -49,6 +47,13 @@ function displayStudentApplications(list){
     var stream =document.createElement('div');
     stream.innerText = list[i].stream;
 
+  //  var status  = document.createElement('checkbox');
+  //  status.setAttribute('data-id',list[i].id);
+  //   status.innerText = 'Status';
+  //   status.ariaChecked=SelectUser;
+
+      
+
     var studentRow = document.createElement('div');
     studentRow.setAttribute('class','application-row-grid');
 
@@ -70,6 +75,18 @@ function displayStudentApplications(list){
    
 
   }
+      
+  // function SelectUser(e) {
+  //   console.log('selecting user', e.target);
+  //   console.log(typeof e.target.dataset.id);
+
+  //   var id = parseInt(e.target.dataset.id);
+
+  //   applicantList = applicantList.filter((student) => student.id !== id);
+
+  //   displayStudentApplications(applicantList);
+  // }
+
 }
 getStudentApplicationList();
 

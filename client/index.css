@@ -54,6 +54,10 @@ body {
     color: #ffffff;
     padding: 5px 10px;
 }
+.scroll{
+    color: #bab833;
+    
+}
 
 .information-grid{
     display: grid;
@@ -154,8 +158,30 @@ body {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
   }
-  
-  
+  .footer{
+    background-color: #212529;
+    color:#a8b71a;
+    
+    
+  }
+  .footer-link {
+    text-decoration: none;
+    color: #ffffff;
+   
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #ff00b3;
+}
+.footer-menu{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: center;
+}
+
  
   
  

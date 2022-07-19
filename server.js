@@ -163,34 +163,34 @@ app.post('/loginFeature', (req, res) => {
 
 
 /////////////////////////////////////////////////////////////////////
-const viewList= [];
+// const viewList= [];
 
-app.get('/getviewtList', (req, res) => {
-    res.send(viewList);
-});
+// app.get('/getviewtList', (req, res) => {
+//     res.send(viewList);
+// });
 
-app.post('/viewStudentApplication', (req, res) => {
-    const student = req.body;
-    //studentList.push(student);
+// app.post('/viewStudentApplication', (req, res) => {
+//     const student = req.body;
+//     //studentList.push(student);
 
-    res.send({ msg: 'Student successfully added' });
-});
+//     res.send({ msg: 'Student successfully added' });
+// });
 
 
-app.post('/formFeature', (req, res) => {
-    const viewList = req.body;
-    for(i=0; i<viewList.length; i++){
-    if(x.viewList==='email')
-    {
-        console.log('user exist');
-    }
-    else
+// app.post('/formFeature', (req, res) => {
+//     const viewList = req.body;
+//     for(i=0; i<viewList.length; i++){
+//     if(x.viewList==='email')
+//     {
+//         console.log('user exist');
+//     }
+//     else
 
-    studentLists.push(student);
-    }
+//     studentLists.push(student);
+//     }
 
-    res.send({ msg: 'User successfully added' });
-});
+//     res.send({ msg: 'User successfully added' });
+// });
 
 
 // viewStudentApplication
