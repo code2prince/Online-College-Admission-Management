@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'client')))
 const userList = [
     {
         email: "princekumarsharma365@gmail.com",
-        mobile: "6200978239",
+        mobile: "8873091666",
         name: "SHRUTI SHARMA",
         password: "12345",
         type:"Student",
@@ -20,14 +20,14 @@ const userList = [
 
     {
         email: "admin@gmail.com",
-        mobile: "6200978239",
+        mobile: "9999999999",
         name: "SHRUTI SHARMA",
         password: "12345",
         type: "Admin"
     },
     {
         email: "amit@gmail.com",
-        mobile: "6200978239",
+        mobile: "9142229384",
         name: "amit SHARMA",
         password: "12345",
         type: "Admin"
@@ -80,6 +80,7 @@ app.post('/enrollStudentApplication', (req, res) => {
 
     res.send({ msg: 'Student successfully added' });
 });
+
 //////// 
 
 // admission form
@@ -90,13 +91,12 @@ app.post('/formFeature', (req, res) => {
     if(x.studentLists==='email')
     {
         console.log('user exist');
-    }
+    }                   
     else
-
     studentLists.push(student);
-    }
+   }
 
-    res.send({ msg: 'User successfully Applied' });
+   res.send({ msg: 'User successfully Applied' });
 });
 
 // login 
@@ -207,7 +207,6 @@ app.post('/getStudentList', (req, res) => {
 
     res.send({ msg: 'Student application successfully added' });
 });
-
 
 
 app.listen(3000, function () {

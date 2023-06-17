@@ -1,4 +1,36 @@
 applicantList=[];
+
+// const students = {
+    
+//   name: name,
+//   gender:selectedGender,
+//   dateofbirth:dateofbirth,
+//   email:email,
+//   number:number,
+//   address:address,
+//   fathername:fathername,
+//   mothername:mothername,
+//   qualification:qualification,
+//   course:course,
+//   stream:stream,
+// };
+// /////////////////
+//   const reqObject = {
+//   method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify(students)
+//   };
+
+//   const studentPromise = fetch('http://localhost:3000/approvedApplication', reqObject)
+//   studentPromise.then(response => response.json()).then(result => {
+ 
+//       console.log('after post call succed, data from server', result)});
+
+
+
+
+
+
 function getStudentApplicationList(){
   fetch("http://localhost:3000/getStudentList")
   .then(response=>response.json())
@@ -52,6 +84,16 @@ function displayStudentApplications(list){
   //   status.innerText = 'Status';
   //   status.ariaChecked=SelectUser;
 
+
+ ////////////////
+
+  var selectStudnetBtton =  document.createElement('button');
+  selectStudnetBtton.setAttribute('data-id', list[i].id);
+  selectStudnetBtton.innerText = 'Select';
+  selectStudnetBtton.onclick = selectUser;
+  /////////////////
+  
+
       
 
     var studentRow = document.createElement('div');
@@ -69,23 +111,27 @@ function displayStudentApplications(list){
     studentRow.appendChild(qualification);
     studentRow.appendChild(course);
     studentRow.appendChild(stream);
+    studentRow.appendChild(selectStudnetBtton); ////////
+    
 
     const whereToDisplay=document.getElementById('application-list');
     whereToDisplay.appendChild(studentRow);
    
 
   }
-      
-  // function SelectUser(e) {
-  //   console.log('selecting user', e.target);
-  //   console.log(typeof e.target.dataset.id);
+//////////////////////
+      function selectUser(e) {
+    console.log('selecting user', e.target);
+    console.log(typeof e.target.dataset.id);
 
-  //   var id = parseInt(e.target.dataset.id);
+    var id = parseInt(e.target.dataset.id);
 
-  //   applicantList = applicantList.filter((student) => student.id !== id);
+   
+    aplicantList = aplicantList.filter((students) => students.id!== id);
 
-  //   displayStudentApplications(applicantList);
-  // }
+    displayStudent(aplicantList);
+  }
+//////////////////
 
 }
 getStudentApplicationList();
